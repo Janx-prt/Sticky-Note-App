@@ -1,0 +1,31 @@
+<!-- posts/templates/posts/post_detail.html -->
+{% extends 'base.html' %}
+
+{% block title %}
+Sticky Notes - {{ post.title }}
+{% endblock %}
+
+{% block content %}
+<div class="note note-blue">
+    <!-- Display the post title -->
+    <h2>{{ post.title }}</h2>
+
+    <!-- Display the post content -->
+    <p>{{ post.content }}</p>
+
+    <!-- Display the author safely -->
+    <p>👤 Author: {{ post.author.name }}</p>
+
+    <!-- Display the post creation timestamp -->
+    <p class="timestamp">🕒 Created at: {{ post.created_at|date:"M d, Y H:i" }}</p>
+
+    <div class="note-actions">
+        <!-- Link to update the post -->
+        <a href="{% url 'post_update' pk=post.pk %}" class="button-link">✏️ Update</a>
+        <!-- Link to delete the post -->
+        <a href="{% url 'post_delete' pk=post.pk %}" class="button-link delete">🗑️ Delete</a>
+        <!-- Link to go back to the post list -->
+        <a href="{% url 'post_list' %}" class="button-link">🔙 Back</a>
+    </div>
+</div>
+{% endblock %}

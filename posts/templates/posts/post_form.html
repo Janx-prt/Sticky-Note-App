@@ -1,0 +1,41 @@
+<!-- posts/templates/posts/post_form.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}
+Sticky Notes - {% if form.instance.pk %}Edit{% else %}Create{% endif %} Post
+{% endblock %}
+
+{% block content %}
+<div class="note note-green">
+    <h2>
+        {% if form.instance.pk %}Edit{% else %}Create{% endif %} Post
+    </h2>
+
+    <form method="post"
+        action="{% if form.instance.pk %}{% url 'post_update' pk=form.instance.pk %}{% else %}{% url 'post_create' %}{% endif %}">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <!-- Title field -->
+            <label for="{{ form.title.id_for_label }}">Title:</label>
+            {{ form.title }}
+
+            <!-- Content field -->
+            <label for="{{ form.content.id_for_label }}">Content:</label>
+            {{ form.content }}
+
+            <!-- Author name field -->
+            <label for="{{ form.author_name.id_for_label }}">Author Name:</label>
+            {{ form.author_name }}
+            {% if form.author_name.field.disabled %}
+            <!-- Keep the value of disabled input by sending it in a hidden field -->
+            <input type="hidden" name="author_name" value="{{ form.author_name.value }}">
+            {% endif %}
+        </div>
+
+        <button type="submit" class="button-link-save">💾 Save</button>
+        <a href="{% url 'post_list' %}" class="button-link">🔙 Back</a>
+    </form>
+</div>
+{% endblock %}

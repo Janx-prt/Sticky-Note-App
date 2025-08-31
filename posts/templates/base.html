@@ -1,0 +1,36 @@
+<!-- posts/templates/base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        {% block title %}
+        Sticky Notes
+        {% endblock title %}
+    </title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="{% static 'posts/styles.css' %}" />
+</head>
+
+<body>
+    <header>
+        <h1>
+            {% block header %}
+            MY STICKY NOTES
+            {% endblock header %}
+        </h1>
+    </header>
+    <main>
+        <!-- Main content block for child templates -->
+        {% block content %}
+        {% endblock content %}
+    </main>
+    <footer>
+        <p>&copy; 2025 Sticky Notes</p>
+    </footer>
+</body>
+
+</html>

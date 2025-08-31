@@ -1,0 +1,29 @@
+<!-- posts/templates/posts/post_list.html -->
+{% extends 'base.html' %}
+
+{% block title %}
+My Sticky Notes - {{ page_title }}
+{% endblock %}
+
+{% block content %}
+<h2>{{ page_title }}</h2>
+
+<a href="{% url 'post_create' %}" class="add-post-link">➕ Add Post</a>
+
+<ul class="note-list">
+    {% for post in posts %}
+    <li class="note {% cycle 'note-blue' 'note-green' 'note-pink' %}">
+        <!-- Link to detail page -->
+        <a href="{% url 'post_detail' pk=post.pk %}"><strong>{{ post.title }}</strong></a>
+        <!-- Show content -->
+        <p>{{ post.content }}</p>
+        <!-- Show author -->
+        <p>👤 Author: {{ post.author.name }}</p>
+        <!-- Optional: show creation date -->
+        <p class="timestamp">🕒 {{ post.created_at|date:"M d, Y H:i" }}</p>
+    </li>
+    {% empty %}
+    <p>No posts yet.</p>
+    {% endfor %}
+</ul>
+{% endblock %}

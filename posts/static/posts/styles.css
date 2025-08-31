@@ -1,0 +1,268 @@
+/* posts/static/posts/styles.css */
+
+/* Base body styles */
+body {
+    font-family: "Arial";
+    background-image: url("images/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    background-color: #ffe1c0;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Main content area */
+main {
+    margin: 20px;
+}
+
+/* List styles for notes */
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Timestamp styling */
+.timestamp {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+/* Form layout */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Form group styles */
+.form-group {
+    font-size: 14px;
+}
+
+/* Input and textarea base styles */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: Arial;
+    resize: vertical;
+}
+
+/* Button link styles */
+.button-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 2px 4px;
+    background-color: hsl(32, 100%, 74%);
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    border: 1.5px solid #000;
+}
+
+/* Button link hover effect */
+.button-link:hover {
+    background-color: #e438e7;
+}
+
+/* Delete button styles */
+.button-link.delete {
+    background-color: #ecaca5;
+}
+
+/* Delete button hover effect */
+.button-link.delete:hover {
+    background-color: #e438e7;
+    border: 2px solid #000;
+}
+
+/* Create note button spacing */
+.create-note {
+    margin-top: 20px;
+}
+
+/* Note card styles */
+.note {
+    width: 200px;
+    height: 300px;
+    padding: 15px;
+    border-radius: 10px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #333;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Note color backgrounds */
+.note-blue {
+    background-image: url("images/note_blue.png");
+}
+
+.note-green {
+    background-image: url("images/note_green.png");
+}
+
+.note-pink {
+    background-image: url("images/note_pink.png");
+}
+
+/* Note link styles */
+.note a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding-left: 10px;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+/* Note paragraph styles */
+.note p {
+    margin-top: 0;
+    text-align: left;
+}
+
+/* Note link hover effect */
+.note a:hover {
+    text-decoration: underline;
+}
+
+/* Add post link styles */
+.add-post-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #e7b0e4;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 2px solid #000;
+    text-decoration: none;
+}
+
+/* Note title spacing */
+.note-title {
+    margin-top: 20;
+    margin-bottom: 20px;
+}
+
+/* Note content spacing */
+.note-content {
+    margin-bottom: 20px;
+}
+
+/* Timestamp styles inside notes */
+.timestamp {
+    margin-bottom: 30px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Note actions container */
+.note-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Add post link hover effect */
+.add-post-link:hover {
+    background-color: #e7b0e4;
+}
+
+/* List item spacing */
+li {
+    margin-bottom: 20px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #ffb1cf;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Input and textarea focus effect */
+input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 4px white;
+}
+
+/* Note title styles */
+.note h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #000000;
+    text-align: center;
+}
+
+/* Form group spacing */
+.form-group p {
+    margin-bottom: 15px;
+}
+
+/* Label styles */
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Input and textarea styling inside form-group */
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.button-link-save {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 4px 8px;
+    background-color: hsl(32, 100%, 74%);
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    border: 2px solid #000;
+}
+
+/* Button link save hover effect */
+.button-link-save:hover {
+    background-color: #e438e7;
+}
